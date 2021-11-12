@@ -123,3 +123,31 @@ a {
   margin-left: 3vmin;
   margin-right: 3vmin;
 }
+
+.Zone3 {
+  background-color: #551469;
+  min-height: 65vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-radius: 35px;
+  margin-bottom: 3vmin;
+  margin-top: 3vmin;
+  margin-left: 3vmin;
+  margin-right: 3vmin;
+}
+
+.Datos {
+  background-color: springgreen;
+  border-radius: 8px;
+  margin-left: 8vmin;
+  margin-right: 8vmin;
+}
+
+.DatosN {
+  background-color: tomato;
+  border-radius: 8px;
+  margin-left: 8vmin;
+  margin-right: 8vmin;
+}
