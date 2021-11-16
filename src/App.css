@@ -151,3 +151,51 @@ a {
   margin-left: 8vmin;
   margin-right: 8vmin;
 }
+
+.Proyectores {
+  background-color: #5587b6;
+  min-height: 65vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-radius: 35px;
+  margin-bottom: 3vmin;
+  margin-top: 3vmin;
+  margin-left: 3vmin;
+  margin-right: 3vmin;
+}
+
+.Proy {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3vmin;
+  margin-top: 3vmin;
+  min-height: 10vh;
+  min-width: 10vw;
+  flex-wrap: wrap;
+  border-radius: 35px;
+}
+
+.Regist {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+}
+
+.Data{
+  margin-bottom: 3vmin;
+  margin-top: 3vmin;
+  
+  flex-wrap: wrap;
+}
+
+.But {
+  background-color: rgb(22, 61, 61);
+  font-size: calc(4px + 2vmin);
+  border-radius: 8px;
+  color: white;
+  border-color: whitesmoke;
+}
