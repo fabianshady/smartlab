@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -18,7 +18,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        
+
         <nav>
           <ul>
             <li>
@@ -35,12 +35,24 @@ function App() {
             </li>
           </ul>
         </nav>
-        
+
         <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/labs" component={Labs}/>
-        <Route exact path="/proys" component={Proys}/>
-        <Route exact path="/regist" component={Regist}/>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/labs">
+            <Labs
+             
+            />
+          </Route>
+          <Route exact path="/proys">
+            <Proys
+             
+            />
+          </Route>
+          <Route exact path="/regist">
+            <Regist
+            
+            />
+            </Route>
         </Switch>
       </div>
     </Router>
