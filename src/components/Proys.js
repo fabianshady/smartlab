@@ -5,7 +5,7 @@ const Proys = () => {
   const [proys1, setProys1] = useState([])
   useEffect(() => {
     const getProys1 = () => {
-      fetch('http://localhost:9000/api/proys1')
+      fetch('https://api.bluemoonsports.works/api/proys1')
         .then(res => res.json())
         .then(res => setProys1(res))
     }
@@ -15,7 +15,7 @@ const Proys = () => {
   const [proys2, setProys2] = useState([])
   useEffect(() => {
     const getProys2 = () => {
-      fetch('http://localhost:9000/api/proys2')
+      fetch('https://api.bluemoonsports.works/api/proys2')
         .then(res => res.json())
         .then(res => setProys2(res))
     }
@@ -25,7 +25,7 @@ const Proys = () => {
   const [proys3, setProys3] = useState([])
   useEffect(() => {
     const getProys3 = () => {
-      fetch('http://localhost:9000/api/proys3')
+      fetch('https://api.bluemoonsports.works/api/proys3')
         .then(res => res.json())
         .then(res => setProys3(res))
     }

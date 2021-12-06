@@ -4,7 +4,7 @@ const Labs = () => {
   const [labs1, setLabs1] = useState([])
   useEffect(() => {
     const getLabs1 = () => {
-      fetch('http://localhost:9000/api/labs1')
+      fetch('https://api.bluemoonsports.works/api/labs1')
         .then(res => res.json())
         .then(res => setLabs1(res))
     }
@@ -14,7 +14,7 @@ const Labs = () => {
   const [labs2, setLabs2] = useState([])
   useEffect(() => {
     const getLabs2 = () => {
-      fetch('http://localhost:9000/api/labs2')
+      fetch('https://api.bluemoonsports.works/api/labs2')
         .then(res => res.json())
         .then(res => setLabs2(res))
     }
@@ -24,7 +24,7 @@ const Labs = () => {
   const [labs3, setLabs3] = useState([])
   useEffect(() => {
     const getLabs3 = () => {
-      fetch('http://localhost:9000/api/labs3')
+      fetch('https://api.bluemoonsports.works/api/labs3')
         .then(res => res.json())
         .then(res => setLabs3(res))
     }

@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
+import regis from '../regis.png'
 
 const Regist = () => {
   const [usuario, setUsuario] = useState({
-
+    nombres: '',
+      apellidos: '',
+      tipo_de_usuario: '',
+      nombre_usuario: ''
   })
 
   const hChange = e => {
@@ -23,7 +27,7 @@ const Regist = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(usuario)
     }
-    fetch('http://localhost:9000/api/users', requestInit)
+    fetch('https://api.bluemoonsports.works/api/users', requestInit)
       .then(res => res.json())
       .then(res => console.log(res))
 
@@ -33,10 +37,12 @@ const Regist = () => {
       tipo_de_usuario: '',
       nombre_usuario: ''
     })
+    alert('Genial, te has registrado exitosamente como '+usuario.nombre_usuario+', dale este nombre de usuario al administrador para adquirir material o un laboratorio.')
   }
   return (
-    <div className="Regist">
-      <h1>Registrate</h1>
+    <div className="Home">
+        <div className="Welc">
+        <h2>Registrate</h2>
       <form onSubmit={hSubmit}>
         <div className="Data">
 
@@ -63,7 +69,11 @@ const Regist = () => {
           <button type="submit" className="But">Enviar</button>
         </div>
       </form>
+        </div>
+        <div className="Back"><img src={regis} width="100%"/></div>
     </div>
+      
+ 
 
   )
 }
