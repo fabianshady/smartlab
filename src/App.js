@@ -22,16 +22,29 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">
+              <img src="https://img.icons8.com/color/36/000000/home.png"/>
+                <div>Home</div>
+                </Link>
             </li>
             <li>
-              <Link to="/labs">Laboratorios</Link>
+              <Link to="/labs">
+                <img src="https://img.icons8.com/external-tal-revivo-green-tal-revivo/36/000000/external-computer-connected-to-another-pc-for-networking-network-green-tal-revivo.png"/>
+                <div>Laboratorios</div>
+              </Link>
             </li>
             <li>
-              <Link to="/proys">Proyectores</Link>
+              <Link to="/proys">
+                
+                <img src="https://img.icons8.com/color/36/000000/video-projector.png"/>
+                <div>Proyectores</div>
+                </Link>
             </li>
             <li>
-              <Link to="/regist">Registrarse</Link>
+              <Link to="/regist">
+              <img src="https://img.icons8.com/color/36/000000/edit-user-male--v1.png"/>
+                <div>Registrarse</div>
+                </Link>
             </li>
           </ul>
         </nav>
