@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Laboratory 1",
+        "available": true
+    },
+    {
+        "id": 2,
+        "name": "Laboratory 2",
+        "available": true
+    },
+    {
+        "id": 3,
+        "name": "Laboratory 3",
+        "available": true
+    },
+    {
+        "id": 4,
+        "name": "Laboratory A",
+        "available": false
+    },
+    {
+        "id": 5,
+        "name": "Laboratory B",
+        "available": true
+    },
+    {
+        "id": 6,
+        "name": "Laboratory C",
+        "available": false
+    }
+]

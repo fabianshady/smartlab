@@ -88,8 +88,8 @@ a {
   background-color: whitesmoke;
   display: flex;
   flex-direction: column;
-  margin-bottom: 3vmin;
-  margin-top: 3vmin;
+  margin: 3vmin;
+  
   min-height: 10vh;
   min-width: 10vw;
   flex-wrap: wrap;
@@ -110,6 +110,7 @@ a {
 
 .Labs {
   
+  
 }
 
 .Zone1 {
@@ -117,6 +118,7 @@ a {
   min-height: 65vh;
   display: flex;
   flex-direction: row;
+ 
   flex-wrap: wrap;
   justify-content: space-around;
   border-radius: 35px;

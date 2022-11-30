@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "brand": "Dell",
+        "model": "Latitude 5480",
+        "available": true
+    },
+    {
+        "id": 2,
+        "brand": "Samsung",
+        "model": "Galaxy S8",
+        "available": true
+    },
+    {
+        "id": 3,
+        "brand": "Apple",
+        "model": "iPhone 7",
+        "available": true
+    },
+    {
+        "id": 4,
+        "brand": "Lenovo",
+        "model": "ThinkPad T470",
+        "available": false
+    },
+    {
+        "id": 5,
+        "brand": "HP",
+        "model": "EliteBook 840 G3",
+        "available": true
+    },
+    {
+        "id": 6,
+        "brand": "Asus",
+        "model": "ZenBook UX330UA",
+        "available": false
+    }
+]
