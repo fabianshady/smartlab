@@ -1,23 +1,22 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import icon from '../proyector.png';
-import data_projs from './projs.json';
-const Proys = () => {
-
-  
+function Proys(props) {
   return (
     <div className="Proys">
       <div>
-        <h1>Zona 1</h1>
+
       </div>
       <div className="Zone1">
         {
-          data_projs.map((a) =>
+          props.proys1.map((a) =>
             <div className="Lab">
               <img className="Img" src={icon} width="200px" height="200px"></img>
               <h1>{a.nombre}</h1>
+              {a.available === false ? <h3>Used by:</h3> : <h3></h3>}
+              {a.available === false ? <h2>{a.used_by}</h2> : <h3></h3>}
               <div>
-                <h4 className={a.disponible === 1 ? "Datos" : "DatosN"}>{
-                  a.disponible === 1 ? "Disponible" : "No disponible"
+                <h4 className={a.available === true ? "Datos" : "DatosN"}>{
+                  a.available === true ? "Disponible" : "No disponible"
                 }</h4>
                 <p>{a.brand}</p>
                 <p>{a.model}</p>

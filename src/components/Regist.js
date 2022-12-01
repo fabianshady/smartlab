@@ -1,79 +1,104 @@
 import React, { useState, useEffect } from "react";
-import regis from '../regis.png'
+import { Lab, Proj } from "./model";
 
-const Regist = () => {
-  const [usuario, setUsuario] = useState({
-    nombres: '',
-      apellidos: '',
-      tipo_de_usuario: '',
-      nombre_usuario: ''
-  })
-
-  const hChange = e => {
-    setUsuario({
-      ...usuario,
-      [e.target.name]: e.target.value
-    })
+function Regist(props) {
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
   }
 
-  const hSubmit = () => {
-    if (usuario.nombre_usuario === '' || usuario.tipo_de_usuario === '') {
-      alert('Llena todos los campos')
-      return
-    }
+  const hSubmitL = () => {
+    const lab1 = new Lab(getRandomInt(100), document.getElementById('typeLab').value, false, document.getElementById('nuser').value)
+    props.labs1.forEach((element, index) => {
+      if (element.name === lab1.name) {
+        props.labs1[index] = lab1;
+        props.setLabs1(props.labs1);
 
-    const requestInit = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(usuario)
-    }
-    fetch('https://api.bluemoonsports.works/api/users', requestInit)
-      .then(res => res.json())
-      .then(res => console.log(res))
-
-    setUsuario({
-      nombres: '',
-      apellidos: '',
-      tipo_de_usuario: '',
-      nombre_usuario: ''
+      }
     })
-    alert('Genial, te has registrado exitosamente como '+usuario.nombre_usuario+', dale este nombre de usuario al administrador para adquirir material o un laboratorio.')
+    alert('Genial, has registrado un laboratorio')
+    document.getElementById('nuser').value = '';
+  }
+
+  const hSubmitP = () => {
+
+    props.proys1.forEach((element, index) => {
+      if (element.model === document.getElementById('typeProj').value) {
+        console.log(props.proys1[index].brand)
+        props.setRet(props.proys1[index].brand)
+      }
+    })
+
+
+    const proy1 = new Proj(getRandomInt(100),
+
+      props.ret
+      ,
+      document.getElementById('typeProj').value,
+      false,
+      document.getElementById('nuser2').value)
+
+    props.proys1.forEach((element, index) => {
+      if (element.model === proy1.model) {
+        console.log(props.ret)
+        props.proys1[index] = proy1;
+        console.log(proy1)
+        props.setProys1(props.proys1);
+      }
+    })
+    alert('Genial, has registrado un proyector')
+    document.getElementById('nuser2').value = '';
   }
   return (
     <div className="Home">
-        <div className="Welc">
-        <h2>Registrate</h2>
-      <form onSubmit={hSubmit}>
+      <div className="Welc">
+        <h2>Laboratorios</h2>
+
         <div className="Data">
 
-          <input onChange={hChange} name="nombre_usuario" id="nuser" className="Inputs" placeholder="Nombre de usuario"></input>
+          <input name="nombre_usuario" id="nuser" className="Inputs" placeholder="Nombre de usuario"></input>
         </div>
+
         <div className="Data">
 
-          <input onChange={hChange} name="nombres" id="name" className="Inputs" placeholder="Nombre"></input>
-        </div>
-        <div className="Data">
+          <select name="labo" id="typeLab" className="Inputs">
+            {
+              props.labs1.map((a) => a.available === true ? <option value={a.name}>{a.name}</option> : <option value={a.name} disabled>{a.name}</option>)
 
-          <input onChange={hChange} name="apellidos" id="lastname" className="Inputs" placeholder="Apellidos"></input>
-        </div>
-        <div className="Data">
-
-          <select onChange={hChange} name="tipo_de_usuario" id="type" className="Inputs" id="hh">
-            <option value="Selecciona">Tipo de usuario</option>
-            <option value="Alumno">Alumno</option>
-            <option value="Profesor">Profesor</option>
+            }
           </select>
         </div>
 
         <div className="Data">
-          <button type="submit" className="But">Enviar</button>
+          <button onClick={hSubmitL} className="But">Enviar</button>
         </div>
-      </form>
+
+      </div>
+      <div className="Welc">
+        <h2>Proyectores</h2>
+
+        <div className="Data">
+
+          <input name="nombre_usuario" id="nuser2" className="Inputs" placeholder="Nombre de usuario"></input>
         </div>
-        <div className="Back"><img src={regis} width="100%"/></div>
+
+        <div className="Data">
+
+          <select name="proje" id="typeProj" className="Inputs">
+            {
+              props.proys1.map((a) => a.available === true ? <option value={a.model}>{a.brand} {a.model}</option> : <option value={a.name} disabled>{a.name}</option>)
+
+            }
+          </select>
+        </div>
+
+        <div className="Data">
+          <button onClick={hSubmitP} className="But">Enviar</button>
+        </div>
+
+      </div>
     </div>
-      
- 
+
+
 
   )
 }
